@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block title %} Uthhaan Foundation - Request {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="container">
+    <h3><i style="font-weight: bold;    ">Request For Fund</i></h3>
+    <form method="POST"> {% csrf_token %}
+        <div class="row mt-4">
+            <div class="form-group col-md-12">
+                <label><i style="font-weight: bold;">Full Name</i></label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name" required>
+            </div>
+        </div>
+
+        <div class="row mt-1">
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Email ID</i></label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email ID" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Contact Number</i></label>
+                <input type="tel" class="form-control" name="phone" id="phone" placeholder="Enter Contact Number"
+                    required>
+            </div>
+        </div>
+
+        <div class="row mt-1">
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">State</i></label>
+                <input type="text" class="form-control" name="state" id="state" placeholder="Enter State" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">City</i></label>
+                <input type="text" class="form-control" name="city" id="city" placeholder="Enter City" required>
+            </div>
+        </div>
+
+        <div class="row mt-1">
+            <div class="form-group col-md-12">
+                <label><i style="font-weight: bold;">Address</i></label>
+                <textarea class="form-control" id="address" name="address" rows="3" placeholder="Enter Address"
+                    required></textarea>
+            </div>
+        </div>
+
+        <div class="row mt-1">
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Charity Type</i></label>
+                <select class="form-control" name="ch_type" required>
+                    <option>Health Charities</option>
+                    <option>Education Charities</option>
+                    <option>Food Charities</option>
+                    <option>Natural Disasters</option>
+                    <option>Environmental Charities</option>
+                    <option>Oldage Home</option>
+                    <option>Community Services</option>
+                    <option>Animal Welfare</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Date Of Donation Request</i></label>
+                <input type="date" class="form-control" id="date" name="date" required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}

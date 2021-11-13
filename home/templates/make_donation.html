@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% block title %} Fund Donation {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="container">
+
+    <h4>Add Donation</h4>
+    <form method="POST" enctype="multipart/form-data"> {% csrf_token %}
+        <div class="row mt-4">
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Donor Name :</i></label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Firstname + Middlename + Lastname"
+                    required>
+            </div>
+        </div>
+
+        <div class="row mt-1">
+        <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Date Of Birth</i></label>
+                <input type="date" class="form-control" id="date" name="date" required>
+        </div>
+
+
+        </div>
+        <div class="row mt-1">
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Amount</i></label>
+                <input class="form-control" id="amount" name="amount" value="₹ " required>
+            </div>
+        </div>
+
+        <div class="row mt-1">
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Email Id</i></label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Enter EmailId" required>
+            </div>
+
+        </div>
+
+        <div class="row mt-1">
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">State</i></label>
+                <input type="text" class="form-control" name="state" id="state" placeholder="Enter State" required>
+            </div>
+
+        </div>
+        <div class="row mt-1">
+        <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">City</i></label>
+                <input type="text" class="form-control" name="city" id="city" placeholder="Enter City" required>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Charity Type</i></label>
+                <select class="form-control" name="ch_type" required>
+                    <option>Health Charities</option>
+                    <option>Education Charities</option>
+                    <option>Food Charities</option>
+                    <option>Natural Disasters</option>
+                    <option>Environmental Charities</option>
+                    <option>Oldage Home</option>
+                    <option>Community Services</option>
+                    <option>Animal Welfare</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <center> <button type="submit" class="btn btn-primary">Submit</button> </center>
+        <br>
+        <br>
+    </form>
+</div>
+{% endblock %}
